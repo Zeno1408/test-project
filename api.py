@@ -26,7 +26,7 @@ async def get_books():
 async def update_book_by_id(book_id: int):
     for book in books_list:
         if book["id"] == book_id:
-            book["Name"] = "The Goldfinch"
+            book.update({"Name": "The Goldfinch"})
     return books_list
 
 @app.delete("/books/{id}")
@@ -35,3 +35,5 @@ async def delete_book_by_id(book_id: int):
         if book["id"] == book_id:
             books_list.pop(book_id-1)
     return books_list
+
+
