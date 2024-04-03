@@ -1,4 +1,4 @@
-from .settings import get_settings
+from app.db.settings import get_settings
 
 sql_session = get_settings().get_session()
 

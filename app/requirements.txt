@@ -6,7 +6,6 @@ charset-normalizer==3.3.2
 click==8.1.7
 dnspython==2.6.1
 email_validator==2.1.1
-embeddings==0.0.8
 fastapi==0.110.0
 h11==0.14.0
 httpcore==1.0.5

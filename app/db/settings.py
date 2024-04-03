@@ -1,3 +1,4 @@
+import os
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 from sqlalchemy import create_engine
@@ -7,14 +8,14 @@ from sqlalchemy.orm import sessionmaker
 class Settings(BaseSettings):
     APP_NAME: str = "Student Management System"
 
-    POSTGRES_DB: str
-    POSTGRES_HOST: str
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
+    POSTGRES_DB: str = os.getenv("POSTGRES_DB")
+    POSTGRES_HOST: str = os.getenv("POSTGRES_HOST")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD")
 
     class Config:
         extra = "ignore"
-        env_file = ".env"
+        env_file = "app/.env"
 
     def get_sql_engine(self):
         engine = create_engine(
