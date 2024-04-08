@@ -1,6 +1,7 @@
 from .db.settings import get_settings
-from .orm_models.student_orm import Base, Student
+from .orm_models.models import Base, Student
 from .request_models.student import StudentUpdate, StudentCreate
+from .response_models.student_response import StudentResponse
 from .db.dependency import get_db
 
 __all__ = [
@@ -10,4 +11,5 @@ __all__ = [
     "Student",
     "StudentUpdate",
     "StudentCreate",
+    "StudentResponse",
 ]
